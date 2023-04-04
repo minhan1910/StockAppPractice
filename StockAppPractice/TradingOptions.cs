@@ -2,6 +2,6 @@
 {
     public class TradingOptions
     {
-        public string? DefaultSymbolToken { get; set; } 
+        public string? DedaultStockSymbol { get; set; } 
     }
 }

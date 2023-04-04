@@ -1,18 +1,24 @@
 ﻿@model StockAppPractice.Models.StockTrade
 
 @{
-    ViewBag.Title = "Stock App";
+    ViewBag.Title = "Trading";
+    ViewBag.CurrentUrl = "~/Trade/Index";
 }
 
-<div class="box trading-panel">
-    <div id="stock-price-panel">
-        
-        <h1><span style="color: deepskyblue;">@Model.StockName</span>
-            <span style="color: deepskyblue;">(@Model.StockSymbol)</span>
-        </h1>
-        
-        <div class="stock">
-            <h1><small class="text-grey">$</small><span>@Model.Price.ToString("N")</span></h1>
+<form method="post">
+    <div class="box trading-panel">
+        <div class="flex trading-panel-flex">
+            <div class="stock">
+                <h1 class="stock-title">@Model.StockName (@Model.StockSymbol)</h1>
+                <h2 class="stock-price"><small class="text-grey">$</small> <span class="price">@Model.Price.ToString("N")</span></h2>
+            </div>
         </div>
     </div>
-</div>
+
+    <input type="hidden" name="StockSymbol" id="StockSymbol" value="@Model.StockSymbol" />
+    <input type="hidden" id="FinnhubToken" value="@ViewBag.FinnhubToken"/>
+</form>
+
+@section Scripts {
+    <script src="~/Scripts/FinnhubScript.js"></script>
+}
