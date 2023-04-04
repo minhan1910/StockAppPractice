@@ -1,0 +1,18 @@
+﻿@model StockAppPractice.Models.StockTrade
+
+@{
+    ViewBag.Title = "Stock App";
+}
+
+<div class="box trading-panel">
+    <div id="stock-price-panel">
+        
+        <h1><span style="color: deepskyblue;">@Model.StockName</span>
+            <span style="color: deepskyblue;">(@Model.StockSymbol)</span>
+        </h1>
+        
+        <div class="stock">
+            <h1><small class="text-grey">$</small><span>@Model.Price.ToString("N")</span></h1>
+        </div>
+    </div>
+</div>
